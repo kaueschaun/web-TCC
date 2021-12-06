@@ -1,0 +1,76 @@
+@import "../../assets/helpers/variables";
+@import "../../assets/helpers/mixins";
+
+.containerHeader {
+  max-width: 100%;
+  padding: 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  margin-left: 15px;
+}
+
+.list {
+  display: flex;
+  height: 70px;
+  align-items: center;
+  @media (max-width: 585px) {
+    height: auto;
+    align-items: center;
+  }
+  @media (max-width: 991px) {
+    height: unset;
+    flex-flow: column;
+  }
+  img {
+    margin-right: auto;
+    margin-left: 10px;
+    width: 16px;
+    height: 16px;
+    @media (max-width: 587px) {
+      display: none;
+    }
+  }
+  li {
+    padding-right: 20px;
+    list-style-type: none;
+    font-weight: bold;
+    @media (max-width: 587px) {
+      display: flex;
+      font-size: 16px;
+      justify-content: center;
+      text-align: left;
+      height: 20px;
+    }
+    .nav-link {
+      color: $primary-color;
+      font-family: $open-sans;
+      text-decoration: none;
+      .active {
+        border-bottom: 3px solid $primary-color;
+      }
+    }
+    .btn-logout {
+      border-radius: 5px;
+      width: 80px;
+      height: 35px;
+      text-decoration: none;
+      @include btn-submit-and-save;
+    }
+    img {
+      width: 40px;
+      border: 2px solid gray;
+      border-radius: 40px;
+      @media (max-width: 741px) {
+        display: none;
+      }
+    }
+    link {
+      padding: 5px;
+      font-family: sans-serif;
+      text-decoration: none;
+    }
+  }
+}

@@ -1,0 +1,50 @@
+@import "../../assets/helpers/variables";
+@import "../../assets/helpers/mixins";
+
+.navbar {
+  max-width: 100%;
+  z-index: 999;
+  padding: 0px;
+  background-color: white;
+  .list {
+    justify-content: flex-end;
+    @media (max-width: 991px) {
+      height: unset;
+      flex-flow: column;
+      padding-right: 0px;
+    }
+    .navbar-nav {
+      padding-right: 25px;
+     .nav-link {
+       font-weight: bold;
+        font-family: $open-sans;
+        color: $primary-color;
+        button {
+          @include btn-submit-and-save;
+          width: 120px;
+          height: 30px;
+        }
+      }
+      .active {
+        border-bottom: 3px solid $primary-color;
+      }
+      .nav-item {
+        .dropdown-item {
+          font-family: $open-sans;
+          font-weight: bold;
+          color: $primary-color;
+          font-size: 14px;
+          &:active {
+            background-color: $primary-color;
+            color: $secundary-bg-color;
+            font-weight: bold;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}
+a {
+  text-decoration: none;
+}
